@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="SGI corrugated box mark">
+<rect width="200" height="200" rx="40" fill="#13538A"/>
+<g transform="translate(100 100) scale(.72) translate(-100 -100)">
+<polygon points="100,20 169,60 100,100 31,60" fill="#D9B48A"/>
+<polygon points="31,60 100,100 100,180 31,140" fill="#FAF6F0"/>
+<polygon points="100,100 169,60 169,140 100,180" fill="#C9D8E6"/>
+<polygon points="58.6,44 127.6,84 141.4,76 72.4,36" fill="#13538A"/>
+<polyline points="31,60 100,100 169,60" fill="none" stroke="#13538A" stroke-width="2" stroke-linejoin="round"/>
+<line x1="100" y1="100" x2="100" y2="180" stroke="#13538A" stroke-width="2"/>
+</g>
+</svg>

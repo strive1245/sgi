@@ -1,0 +1,15 @@
+{
+  "name": "Shree Ganpati Paper Box Industries",
+  "short_name": "SGI Paper Box",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#09090B",
+  "icons": [
+    {
+      "src": "/assets/img/logo-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
