@@ -293,3 +293,4 @@ details p{padding:0 0 20px;color:#475569;max-width:680px}
 .ph{flex-direction:column;text-align:center;gap:10px}
 .hero-photo{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}.fc-foot{flex-direction:column;align-items:flex-start;gap:4px;line-height:1.5}
 .factory-card .hero-photo{display:none!important}
+.hero.blueprint{background-image:none!important}.hero-ghost{display:none!important}
