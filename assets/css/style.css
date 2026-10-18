@@ -292,4 +292,4 @@ details p{padding:0 0 20px;color:#475569;max-width:680px}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 .ph{flex-direction:column;text-align:center;gap:10px}
 .hero-photo{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}.fc-foot{flex-direction:column;align-items:flex-start;gap:4px;line-height:1.5}
-.factory-card .hero-photo{width:100%!important;height:auto!important;aspect-ratio:1/1!important;max-height:340px!important;object-fit:cover!important;object-position:center 60%!important}
+.factory-card .hero-photo{display:none!important}
