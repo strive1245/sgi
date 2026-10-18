@@ -5,6 +5,12 @@ const fs = require('fs');
 const path = require('path');
 const root = path.join(__dirname, '..');
 const cfg = JSON.parse(fs.readFileSync(path.join(root, 'site.config.json'), 'utf8'));
+const pick = b => ['jpg', 'jpeg', 'png', 'webp'].map(e => b + '.' + e).find(f => fs.existsSync(path.join(root, 'assets/img', f)));
+if (!cfg.heroPhoto && pick('hero')) cfg.heroPhoto = 'assets/img/' + pick('hero');
+if (!(cfg.gallery && cfg.gallery.length)) {
+  const g = [1, 2, 3].filter(i => pick('gallery-' + i)).map(i => ({ src: 'assets/img/' + pick('gallery-' + i), alt: 'Corrugated boxes, ' + cfg.city }));
+  if (g.length === 3) cfg.gallery = g;
+}
 const towns = JSON.parse(fs.readFileSync(path.join(root, 'data/towns.json'), 'utf8'));
 
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
