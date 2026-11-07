@@ -137,6 +137,22 @@ const appData = {
   towns: towns.map(t => t.name).concat(['Muktsar', 'Other'])
 };
 
+const separatorSection = () => `
+<section class="sec separator-section" id="kinnow-separators"><div class="wrap">
+<div class="separator-grid"><div>
+<span class="mono eyebrow">Kinnow packaging / Made to measure</span>
+<h2>Kinnow box separators.<br><span>Made to fit your box.</span></h2>
+<p class="lead">We manufacture kinnow box separators in different dimensions at our Sri Ganganagar factory. Order separators to match your carton size and fruit-packing requirements.</p>
+<ul class="separator-points"><li>Custom length and width</li><li>For kinnow cartons and fruit packaging</li><li>Share your dimensions or a sample for a quote</li></ul>
+<div class="hero-actions"><a class="btn btn-green" href="${wa('Hello SGI, I need kinnow box separators. Box inner size (L x W x H): __. Separator size (L x W): __. Unit (inch/mm): __. Quantity: __. Delivery town: __. I can share a sample photo.')}" data-track="whatsapp">Get a separator quote &rarr;</a></div>
+</div><div class="separator-sample">
+<span class="mono">Cut to your carton dimensions</span>
+<div class="separator-stack" role="img" aria-label="Illustration of separator sheets sized to fit a kinnow carton"><div></div><div></div><div><span>YOUR SIZE.<br>YOUR PACKING.</span></div></div>
+<p class="mono">Length × width · Inches or millimetres</p><small>Illustration only. Final separator design confirmed from your sample.</small>
+</div></div>
+</div></section>
+`;
+
 function buildHome() {
   const title = `${cfg.name} – Corrugated Boxes, ${cfg.city}`;
   const desc = `Corrugated box manufacturer in ${cfg.city} since ${cfg.since}. Kinnow, oil-pack and printed cartons. Call ${cfg.person} ${cfg.phone} for a quote.`;
@@ -170,6 +186,8 @@ ${cfg.heroPhoto ? `<img class="hero-photo" src="${esc(cfg.heroPhoto)}" alt="${es
 </div></aside>
 </div></div>
 </section>
+
+${separatorSection()}
 
 <div class="marquee" aria-hidden="true"><div class="marquee-track">${marqHtml}</div></div>
 <div class="trust"><div class="wrap"><ul><li>GST registered</li><li>Udyog Vihar, ${cfg.city}</li><li>In business since ${cfg.since}</li><li>Open every day, 8 AM to 8 PM</li><li>Daily deliveries to nearby towns</li></ul></div></div>
