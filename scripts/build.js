@@ -184,8 +184,6 @@ function buildHome() {
   const gallery = cfg.gallery && cfg.gallery.length
     ? cfg.gallery.map(g => `<figure><img src="${esc(g.src)}" alt="${esc(g.alt)}" loading="lazy" width="800" height="600"></figure>`).join('')
     : [1, 2, 3].map(i => `<div class="ph" role="img" aria-label="Factory photo ${i} to be added">${boxSvg}Add factory photo ${i}<br>(see README)</div>`).join('');
-  const marq = ['Corrugated boxes', `Since ${cfg.since}`, cfg.city, '3-ply · 5-ply', 'Printed cartons', 'Made local'];
-  const marqHtml = [...marq, ...marq].map(m => `<span>${m}</span>`).join('');
   return `${head({ title, desc, url: cfg.siteUrl + '/', extra: ld(jsonLdSite()) + ld(jsonLdBusiness()) + ld(faqLd(faqs)) + '<style>.factory-card .hero-carton-art{display:block;width:100%;height:220px;object-fit:contain;padding:0;background:#f6eee4}@media(max-width:959px){.factory-card .hero-carton-art{height:240px}}</style>' })}
 ${header()}
 <main id="main">
@@ -214,8 +212,6 @@ ${header()}
 
 ${separatorSection()}
 
-<div class="marquee" aria-hidden="true"><div class="marquee-track">${marqHtml}</div></div>
-<div class="trust"><div class="wrap"><ul><li>GST registered</li><li>Udyog Vihar, ${cfg.city}</li><li>In business since ${cfg.since}</li><li>Open every day, 8 AM to 8 PM</li><li>Daily deliveries to nearby towns</li></ul></div></div>
 
 <section class="process" id="process" aria-label="Process">
 <div class="process-pin"><div class="wrap"><div class="process-grid">
