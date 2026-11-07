@@ -22,3 +22,11 @@ Netlify, Cloudflare Pages or GitHub Pages: no build command needed (build output
 
 ## After launch
 Submit `sitemap.xml` in Google Search Console; claim the Google Business Profile with the same name and phone (8005810091) as Justdial/IndiaMART.
+
+## Google Analytics 4 (free standard property)
+Set `googleAnalyticsId` in `site.config.json` to your GA4 web stream Measurement ID (`G-...`), then run `npm run build`. Alternatively set the `GA_MEASUREMENT_ID` environment variable for the build. An empty ID leaves analytics disabled; an invalid ID stops the build.
+
+The Google tag loads asynchronously on every generated page. Existing `contact_click` events record WhatsApp and call clicks using `method` and `page`; they do not contain enquiry form contents. Confirm page views and contact clicks in GA4 Realtime after deployment.
+
+### Google Tag Manager
+`googleTagManagerId` is set to the supplied container `GTM-5R77Z3KJ`. The provided async Google Tag Manager snippet is generated on every page. Keep the direct `googleAnalyticsId` empty when using GTM. Configure and publish the GA4 destination inside this container, then verify reports in GA4 Realtime; installing a container alone does not confirm that a GA4 destination is configured.

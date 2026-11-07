@@ -18,5 +18,7 @@
   "townsServed": 14,
   "formEndpoint": "",
   "heroPhoto": "",
-  "gallery": []
+  "gallery": [],
+  "googleAnalyticsId": "",
+  "googleTagManagerId": "GTM-5R77Z3KJ"
 }

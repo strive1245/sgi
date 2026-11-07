@@ -47,11 +47,36 @@ const jsonLdBusiness = () => ({
 const jsonLdSite = () => ({ '@context': 'https://schema.org', '@type': 'WebSite', name: cfg.name, alternateName: ['SGI Paper Box', 'Shree Ganpati Industries'], url: cfg.siteUrl });
 const ld = o => `<script type="application/ld+json">${JSON.stringify(o)}</script>`;
 
+// Google tag configuration: use the provided GTM container or a direct GA4 ID.
+const analyticsId = String(process.env.GA_MEASUREMENT_ID || cfg.googleAnalyticsId || '').trim();
+if (analyticsId && !/^G-[A-Z0-9]+$/.test(analyticsId)) {
+  throw new Error('Google Analytics Measurement ID must start with G- and contain only uppercase letters and digits.');
+}
+const tagManagerId = String(cfg.googleTagManagerId || '').trim();
+if (tagManagerId && !/^GTM-[A-Z0-9]+$/.test(tagManagerId)) throw new Error('Invalid Google Tag Manager container ID.');
+if (tagManagerId && analyticsId) throw new Error('Configure either GTM or a direct GA4 ID to avoid duplicate tracking.');
+const analyticsTag = () => tagManagerId ? `
+<!-- Google Tag Manager -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=${tagManagerId}"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+</script>` : analyticsId ? `
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=${analyticsId}"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${analyticsId}');
+</script>` : '';
+
 function head({ title, desc, url, extra = '', depth = 0 }) {
   const rel = depth ? '../' : '';
   return `<!doctype html>
 <html lang="en-IN">
-<head>
+<head>${analyticsTag()}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(title)}</title>
@@ -161,7 +186,7 @@ function buildHome() {
     : [1, 2, 3].map(i => `<div class="ph" role="img" aria-label="Factory photo ${i} to be added">${boxSvg}Add factory photo ${i}<br>(see README)</div>`).join('');
   const marq = ['Corrugated boxes', `Since ${cfg.since}`, cfg.city, '3-ply · 5-ply', 'Printed cartons', 'Made local'];
   const marqHtml = [...marq, ...marq].map(m => `<span>${m}</span>`).join('');
-  return `${head({ title, desc, url: cfg.siteUrl + '/', extra: ld(jsonLdSite()) + ld(jsonLdBusiness()) + ld(faqLd(faqs)) })}
+  return `${head({ title, desc, url: cfg.siteUrl + '/', extra: ld(jsonLdSite()) + ld(jsonLdBusiness()) + ld(faqLd(faqs)) + '<style>.factory-card .hero-carton-art{display:block;width:100%;height:190px;object-fit:contain;padding:0 10px;background:linear-gradient(145deg,#fff,#faf7f1)}@media(max-width:959px){.factory-card .hero-carton-art{height:210px}}</style>' })}
 ${header()}
 <main id="main">
 
@@ -176,7 +201,7 @@ ${header()}
 <p class="hero-small">GST invoice &middot; Sample before bulk &middot; Factory visits welcome &middot; Call ${cfg.phone}</p>
 </div>
 <aside class="factory-card" aria-label="Factory summary">
-${cfg.heroPhoto ? `<img class="hero-photo" src="${esc(cfg.heroPhoto)}" alt="${esc(cfg.name)} factory, ${esc(cfg.city)}" width="800" height="600">` : `<div class="ph" role="img" aria-label="Factory photo to be added">${boxSvg}Add your factory photo<br>(see README)</div>`}
+<img class="hero-carton-art" src="assets/img/corrugated-carton.svg" alt="3D illustration of an SGI corrugated cardboard carton" width="640" height="360">
 <div class="fc-foot"><span class="mono">${esc(cfg.street)}, ${esc(cfg.city)}, ${esc(cfg.region)} ${esc(cfg.postal)}</span><span class="mono">Est. ${cfg.since}</span></div>
 <div class="stats">
 <div class="stat"><b><span data-count="${years}">${years}</span>+</b><span>Years in business</span></div>

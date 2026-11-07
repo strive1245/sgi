@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+<title id="title">Three-dimensional corrugated carton</title><desc id="desc">A kraft cardboard shipping carton with folded flaps, a paper tape seal and an SGI mark.</desc>
+<defs>
+<linearGradient id="top" x2="1" y2="1"><stop stop-color="#ead2ad"/><stop offset="1" stop-color="#d8b786"/></linearGradient>
+<linearGradient id="front" x2="0.8" y2="1"><stop stop-color="#d6ae78"/><stop offset="1" stop-color="#bd8e51"/></linearGradient>
+<linearGradient id="side" x2="1" y2="0"><stop stop-color="#b28248"/><stop offset="1" stop-color="#c59b63"/></linearGradient>
+<filter id="shadow"><feGaussianBlur stdDeviation="9"/></filter>
+</defs>
+<ellipse cx="322" cy="311" rx="176" ry="16" fill="#553c21" opacity=".13" filter="url(#shadow)"/>
+<g stroke="#a77d49" stroke-width="1.2" stroke-linejoin="round">
+<path d="M144 127 326 49 502 133 321 217Z" fill="url(#top)"/>
+<path d="M144 127 321 217 321 310 145 220Z" fill="url(#front)"/>
+<path d="M321 217 502 133 501 226 321 310Z" fill="url(#side)"/>
+<path d="M235 88 414 174" fill="none" stroke="#9c7545" stroke-width="2"/>
+<path d="M221 94 249 82 428 167 400 180Z" fill="#f3e3c5" stroke="#d9c097"/>
+<path d="M400 180 428 167 428 207 400 220Z" fill="#decca8" stroke="#c2a47b"/>
+<path d="M150 132 320 218 496 138" fill="none" stroke="#f1d6ad" stroke-width="2"/>
+<path d="M322 223 322 305" fill="none" stroke="#976b36" opacity=".7"/>
+</g>
+<g transform="matrix(1 .5 0 1 178 177)" fill="#694a28"><text font-family="Arial,sans-serif" font-size="31" font-weight="800" letter-spacing="2">SGI</text><text y="21" font-family="monospace" font-size="7" letter-spacing="1">MADE TO FIT.</text><path d="M5 40V27m-4 4 4-4 4 4m10 16V34m-4 4 4-4 4 4" fill="none" stroke="#79542b" stroke-width="2"/></g>
+<path d="M451 233 476 222 476 237 451 248Z" fill="none" stroke="#896031" opacity=".7"/>
+</svg>
