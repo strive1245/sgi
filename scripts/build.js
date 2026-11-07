@@ -186,7 +186,7 @@ function buildHome() {
     : [1, 2, 3].map(i => `<div class="ph" role="img" aria-label="Factory photo ${i} to be added">${boxSvg}Add factory photo ${i}<br>(see README)</div>`).join('');
   const marq = ['Corrugated boxes', `Since ${cfg.since}`, cfg.city, '3-ply · 5-ply', 'Printed cartons', 'Made local'];
   const marqHtml = [...marq, ...marq].map(m => `<span>${m}</span>`).join('');
-  return `${head({ title, desc, url: cfg.siteUrl + '/', extra: ld(jsonLdSite()) + ld(jsonLdBusiness()) + ld(faqLd(faqs)) + '<style>.factory-card .hero-carton-art{display:block;width:100%;height:190px;object-fit:contain;padding:0 10px;background:linear-gradient(145deg,#fff,#faf7f1)}@media(max-width:959px){.factory-card .hero-carton-art{height:210px}}</style>' })}
+  return `${head({ title, desc, url: cfg.siteUrl + '/', extra: ld(jsonLdSite()) + ld(jsonLdBusiness()) + ld(faqLd(faqs)) + '<style>.factory-card .hero-carton-art{display:block;width:100%;height:220px;object-fit:contain;padding:0;background:#f6eee4}@media(max-width:959px){.factory-card .hero-carton-art{height:240px}}</style>' })}
 ${header()}
 <main id="main">
 
@@ -201,7 +201,7 @@ ${header()}
 <p class="hero-small">GST invoice &middot; Sample before bulk &middot; Factory visits welcome &middot; Call ${cfg.phone}</p>
 </div>
 <aside class="factory-card" aria-label="Factory summary">
-<img class="hero-carton-art" src="assets/img/corrugated-carton.svg" alt="3D illustration of an SGI corrugated cardboard carton" width="640" height="360">
+<img class="hero-carton-art" src="assets/img/appliance-produce-cartons.webp" alt="Illustrative range of corrugated packaging: tall refrigerator carton, long AC carton, industrial box and ventilated produce box" width="1200" height="800">
 <div class="fc-foot"><span class="mono">${esc(cfg.street)}, ${esc(cfg.city)}, ${esc(cfg.region)} ${esc(cfg.postal)}</span><span class="mono">Est. ${cfg.since}</span></div>
 <div class="stats">
 <div class="stat"><b><span data-count="${years}">${years}</span>+</b><span>Years in business</span></div>
