@@ -294,23 +294,3 @@ details p{padding:0 0 20px;color:#475569;max-width:680px}
 .hero-photo{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}.fc-foot{flex-direction:column;align-items:flex-start;gap:4px;line-height:1.5}
 .factory-card .hero-photo{display:none!important}
 .hero.blueprint{background-image:none!important}.hero-ghost{display:none!important}
-
-
-/* Custom kinnow separators */
-.separator-section{background:#faf6f0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.separator-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
-.separator-section h1,.separator-section h2{font-family:var(--f-head);font-size:clamp(32px,4.5vw,56px);font-weight:900;line-height:1.08;margin:12px 0 24px}
-.separator-section h1 span,.separator-section h2 span{color:var(--accent-dark)}
-.separator-section .lead{margin-bottom:24px}
-.separator-points{padding-left:20px;color:#475569;display:grid;gap:8px}
-.separator-link{font-family:var(--f-mono);font-size:12px;text-decoration:underline;align-self:center;padding:12px 0}
-.separator-sample{background:#fff;border:1px solid #e8dfd3;border-radius:18px;padding:28px;text-align:center;overflow:hidden}
-.separator-sample>.mono{font-size:11px;color:#6b5c49}
-.separator-sample small{display:block;color:#64748b;font-size:12px;margin-top:12px}
-.separator-stack{height:240px;position:relative;margin:12px auto;max-width:320px;perspective:700px}
-.separator-stack>div{position:absolute;left:12%;top:42px;width:76%;height:160px;background:#d9b48a;border:1px solid #a87b47;transform:rotateX(48deg) rotateZ(-22deg);box-shadow:0 10px 0 #bc925f}
-.separator-stack>div:nth-child(2){top:18px;background:#e2c299}
-.separator-stack>div:nth-child(3){top:-6px;background:#ecd3b0;display:flex;align-items:center;justify-content:center}
-.separator-stack span{font-family:var(--f-mono);font-size:18px;letter-spacing:.12em;color:#70502d;font-weight:700}
-.separator-crumbs{padding-top:100px}.separator-crumbs+.separator-section{padding-top:48px}
-@media(max-width:800px){.separator-grid{grid-template-columns:1fr;gap:28px}.separator-sample{padding:20px}.separator-stack{height:210px}}

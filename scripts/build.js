@@ -138,19 +138,19 @@ const appData = {
 };
 
 const separatorSection = () => `
-<section class="sec separator-section" id="kinnow-separators"><div class="wrap">
-<div class="separator-grid"><div>
-<span class="mono eyebrow">Kinnow packaging / Made to measure</span>
-<h2>Kinnow box separators.<br><span>Made to fit your box.</span></h2>
-<p class="lead">We manufacture kinnow box separators in different dimensions at our Sri Ganganagar factory. Order separators to match your carton size and fruit-packing requirements.</p>
-<ul class="separator-points"><li>Custom length and width</li><li>For kinnow cartons and fruit packaging</li><li>Share your dimensions or a sample for a quote</li></ul>
-<div class="hero-actions"><a class="btn btn-green" href="${wa('Hello SGI, I need kinnow box separators. Box inner size (L x W x H): __. Separator size (L x W): __. Unit (inch/mm): __. Quantity: __. Delivery town: __. I can share a sample photo.')}" data-track="whatsapp">Get a separator quote &rarr;</a></div>
-</div><div class="separator-sample">
-<span class="mono">Cut to your carton dimensions</span>
-<div class="separator-stack" role="img" aria-label="Illustration of separator sheets sized to fit a kinnow carton"><div></div><div></div><div><span>YOUR SIZE.<br>YOUR PACKING.</span></div></div>
-<p class="mono">Length × width · Inches or millimetres</p><small>Illustration only. Final separator design confirmed from your sample.</small>
-</div></div>
-</div></section>
+<style>${fs.readFileSync(path.join(root, 'assets/css/separators.css'), 'utf8')}</style>
+<section class="sec" id="kinnow-separators" aria-labelledby="separator-heading"><div class="wrap"><div class="ks-layout">
+<div class="ks-copy"><p class="ks-eyebrow">Kinnow packaging · Custom dimensions</p>
+<h2 id="separator-heading">Kinnow box separators.<span>Made to fit your cartons.</span></h2>
+<p class="ks-intro">Manufactured in Sri Ganganagar, in the dimensions your packing needs. Share your carton size or an existing sample for a custom separator quote.</p>
+<ul class="ks-options"><li>Custom length &amp; width</li><li>Inches or millimetres</li><li>Made to order</li></ul>
+<a class="ks-action" href="${wa('Hello SGI, I need kinnow box separators. Box inner size (L x W x H): __. Separator size (L x W): __. Unit (inch/mm): __. Quantity: __. Delivery town: __. I can share a sample photo.')}" data-track="whatsapp">Get a separator quote <span aria-hidden="true">&rarr;</span></a>
+<p class="ks-help">Send your dimensions, quantity and delivery town on WhatsApp.</p></div>
+<div class="ks-visual"><div class="ks-card-head"><span>Cut to your dimensions</span><span>Custom fit</span></div>
+<div class="ks-drawing" role="img" aria-label="Illustration of stacked kinnow separator sheets, made to your required length and width"><div class="ks-sheet"></div><div class="ks-sheet"></div><div class="ks-sheet"><strong>YOUR SIZE.<br>YOUR PACKING.</strong></div></div>
+<div class="ks-measure"><div><small>Length</small><b>As required</b></div><span aria-hidden="true">&times;</span><div><small>Width</small><b>As required</b></div></div>
+<p class="ks-caption">Illustration only. Final design confirmed from your sample.</p></div>
+</div></div></section>
 `;
 
 function buildHome() {
